@@ -1,0 +1,50 @@
+// FONTS
+
+/* montserrat-200 - latin */
+@font-face {
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 200;
+   src: local("Montserrat ExtraLight"), local("Montserrat-ExtraLight"),
+      url("../assets/fonts/montserrat-v14-latin-200.woff2") format("woff2");
+}
+
+/* montserrat-regular - latin */
+@font-face {
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 400;
+   src: local("Montserrat Regular"), local("Montserrat-Regular"), url("../assets/fonts/montserrat-v14-latin-regular.woff2") format("woff2");
+}
+
+/* montserrat-600 - latin */
+@font-face {
+   font-family: "Montserrat";
+   font-style: normal;
+   font-weight: 600;
+   src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"), url("../assets/fonts/montserrat-v14-latin-600.woff2") format("woff2");
+}
+
+/* roboto-300 - latin */
+@font-face {
+   font-family: "Roboto";
+   font-style: normal;
+   font-weight: 300;
+   src: local("Roboto Light"), local("Roboto-Light"), url("../assets/fonts/roboto-v20-latin-300.woff2") format("woff2");
+}
+
+/* roboto-regular - latin */
+@font-face {
+   font-family: "Roboto";
+   font-style: normal;
+   font-weight: 400;
+   src: local("Roboto"), local("Roboto-Regular"), url("../assets/fonts/roboto-v20-latin-regular.woff2") format("woff2");
+}
+
+/* roboto-700 - latin */
+@font-face {
+   font-family: "Roboto";
+   font-style: normal;
+   font-weight: 700;
+   src: local("Roboto Bold"), local("Roboto-Bold"), url("../assets/fonts/roboto-v20-latin-700.woff2") format("woff2");
+}

@@ -1,19 +1,25 @@
+@import "sass/main.scss";
+
 .Modal {
    position: fixed;
    z-index: 500;
-   background-color: white;
+   overflow: hidden;
    width: 70%;
-   border: 1px solid #ccc;
-   box-shadow: 1px 1px 1px black;
+   height: 40vh;
+   border-radius: 1rem;
+   box-shadow: var(--bs);
    padding: 16px;
    left: 15%;
    top: 30%;
-   box-sizing: border-box;
-   transition: all 0.3s ease-out;
-}
+   transition: all 300ms ease-out;
+   background-color: white;
 
-@media (min-width: 600px) {
-   .Modal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   @include media(">md") {
       width: 500px;
       left: calc(50% - 250px);
    }

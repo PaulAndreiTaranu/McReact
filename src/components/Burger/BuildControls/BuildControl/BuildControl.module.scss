@@ -1,57 +1,73 @@
+@import "sass/main.scss";
+
 .BuildControl {
    display: flex;
-   justify-content: space-between;
+   justify-content: center;
    align-items: center;
-   margin: 5px 0;
+   width: 100%;
+
+   > * {
+      width: calc(100% / 3);
+      padding: 1vh 1vw;
+   }
 }
 
-.BuildControl button {
+.btn {
    display: block;
-   font: inherit;
-   padding: 5px;
-   margin: 0 5px;
-   width: 80px;
-   border: 1px solid #aa6817;
+   font: 300 1.2rem var(--ff-secondary);
    cursor: pointer;
+   border: none;
    outline: none;
+   transition: all 300ms ease-out;
 
    &:disabled {
-      background-color: #ac9980;
-      border: 1px solid #7e7365;
-      color: #ccc;
+      background-color: var(--c-light);
+      color: #888888;
       cursor: default;
    }
    &:hover:disabled {
-      background-color: #ac9980;
-      color: #ccc;
+      background-color: white;
+      color: #888888;
       cursor: not-allowed;
+   }
+
+   @include media(">sm") {
+      font-size: 1.5rem;
+   }
+   @include media(">md") {
+      font-size: 2rem;
+   }
+
+   &__add {
+      background-color: var(--c-primary);
+      color: white;
+
+      &:hover,
+      &:active {
+         background-color: var(--c-primary-light-2);
+      }
+   }
+
+   &__sub {
+      background-color: var(--c-primary-light-3);
+      // color: var(--c-primary-dark-1);
+      color: var(--c-light);
+
+      &:hover,
+      &:active {
+         background-color: var(--c-primary-light-2);
+         color: white;
+      }
    }
 }
 
-.Label {
-   padding: 10px;
-   font-weight: bold;
-   width: 80px;
-}
+.label {
+   font: 600 1.2rem var(--ff-primary);
 
-.BuildControl .Less {
-   background-color: #d39952;
-   color: white;
-}
-
-.BuildControl .More {
-   background-color: #8f5e1e;
-   color: white;
-}
-
-.BuildControl .Less:hover,
-.BuildControl .Less:active {
-   background-color: #daa972;
-   color: white;
-}
-
-.BuildControl .More:hover,
-.BuildControl .More:active {
-   background-color: #99703f;
-   color: white;
+   @include media(">sm") {
+      font-size: 1.5rem;
+   }
+   @include media(">md") {
+      font-size: 2rem;
+   }
 }

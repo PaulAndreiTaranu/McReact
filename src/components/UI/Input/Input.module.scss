@@ -1,0 +1,30 @@
+.Input {
+   width: 100%;
+   padding: 1rem;
+}
+
+.Label {
+   font-weight: bold;
+   display: block;
+   margin-bottom: 0.8rem;
+}
+
+.InputElement {
+   width: 100%;
+   outline: none;
+   border: 0.2rem solid var(--c-primary-dark-3);
+   background-color: white;
+   color: var(--c-dark);
+   font: 600 1.5rem var(--ff-primary);
+   padding: 1rem 1rem;
+   border-radius: var(--br);
+   transition: all 300ms ease-out;
+
+   &:focus {
+      color: black;
+   }
+}
+
+.Invalid {
+   border: 0.2rem solid red;
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./BuildControls.module.css";
+import classes from "./BuildControls.module.scss";
 import BuildControl from "./BuildControl/BuildControl";
 
 const controls = [
@@ -11,22 +11,26 @@ const controls = [
 
 const buildControls = (props) => {
    return (
-      <div className={classes.BuildControls}>
-         <p>
-            Current price: <strong>{props.price.toFixed(2)}</strong>
-         </p>
-         {controls.map((control) => (
-            <BuildControl
-               key={control.label}
-               label={control.label}
-               added={() => props.ingredientAdded(control.type)}
-               removed={() => props.ingredientRemoved(control.type)}
-               disabled={props.disabled[control.type]}
-            />
-         ))}
-         <button disabled={!props.purchasable} className={classes.OrderButton} onClick={props.ordered}>
-            ORDER NOW
-         </button>
+      <div className={classes.container}>
+         <div className={classes.BuildControls}>
+            <p className={classes.currentPrice}>
+               Current price: <strong>${props.price.toFixed(2)}</strong>
+            </p>
+            <div>
+               {controls.map((control) => (
+                  <BuildControl
+                     key={control.label}
+                     label={control.label}
+                     added={() => props.ingredientAdded(control.type)}
+                     removed={() => props.ingredientRemoved(control.type)}
+                     disabled={props.disabled[control.type]}
+                  />
+               ))}
+            </div>
+            <button className={classes.orderButton} disabled={!props.purchasable} onClick={props.ordered}>
+               {props.isAuth ? "ORDER NOW" : "SIGN IN TO ORDER"}
+            </button>
+         </div>
       </div>
    );
 };

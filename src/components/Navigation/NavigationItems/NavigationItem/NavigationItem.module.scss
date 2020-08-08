@@ -1,45 +1,62 @@
+@import "sass/main.scss";
+
 .NavigationItem {
-   margin: 10px 0;
-   box-sizing: border-box;
+   font: 600 1.8rem var(--ff-primary);
    width: 100%;
-   display: block;
+   height: 100%;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
 
    & a {
-      color: #8f5c2c;
+      position: relative;
       text-decoration: none;
       width: 100%;
-      box-sizing: border-box;
-      display: block;
+      height: 100%;
+      transition: all 250ms ease-out;
+      padding: 16px 10px;
+      color: var(--c-primary-dark-3);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      &::after {
+         content: "";
+         display: block;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         width: 80%;
+         height: 0.5rem;
+         background-color: white;
+         transition: all 200ms ease-in-out;
+      }
 
       &:hover,
       &:active,
       &.active {
-         color: #40a4c8;
+         background-color: var(--c-light);
+         color: var(--c-dark);
+
+         &::after {
+            width: 100%;
+            background-color: var(--c-secondary);
+         }
       }
    }
-}
 
-@media (min-width: 500px) {
-   .NavigationItem {
-      margin: 0;
-      height: 100%;
+   @include media(">sm") {
       width: auto;
-      display: flex;
-      align-items: center;
 
       & a {
-         color: white;
-         height: 100%;
-         width: 100%;
-         padding: 16px 10px;
-         border-bottom: 4px solid transparent;
+         color: var(--c-primary-light-3);
 
-         &:hover,
-         &:active,
-         &.active {
-            background-color: #8f5c2c;
-            border-bottom: 4px solid #40a4c8;
-            color: white;
+         &::after {
+            background-color: var(--c-secondary-dark-3);
+            left: auto;
          }
       }
    }

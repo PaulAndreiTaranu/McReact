@@ -1,0 +1,20 @@
+@import "sass/main.scss";
+
+.Burger {
+   box-sizing: border-box;
+   width: 50%;
+   margin: auto;
+   height: 50vh;
+   text-align: center;
+
+   overflow: scroll;
+   scrollbar-width: none;
+   scroll-behavior: smooth;
+   -ms-overflow-style: none;
+
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+}

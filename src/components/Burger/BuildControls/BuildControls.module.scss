@@ -1,0 +1,68 @@
+@import "sass/main.scss";
+
+.container {
+   height: 40vh;
+   display: flex;
+   align-items: top;
+   justify-content: center;
+}
+
+.BuildControls {
+   font: 400 1.2rem var(--ff-primary);
+   width: 50%;
+   height: 90%;
+   background-color: white;
+   border-radius: 1rem;
+   box-shadow: var(--bs);
+   overflow: hidden;
+
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   justify-content: space-between;
+
+   > * {
+      width: 100%;
+   }
+
+   @include media(">sm") {
+      font-size: 1.5rem;
+   }
+   @include media(">md") {
+      font-size: 2rem;
+   }
+}
+
+.currentPrice {
+   border-radius: 1rem 1rem 0 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex: 1 1 auto;
+   padding: 1vh 1vw;
+}
+
+.orderButton {
+   flex: 1 1 auto;
+   font: inherit;
+   cursor: pointer;
+   outline: none;
+   border: none;
+   border-radius: 0 0 1rem 1rem;
+   transition: all 350ms ease-out;
+   background-color: white;
+   color: var(--c-primary);
+   padding: 1vh 1vw;
+
+   &:hover,
+   &:active {
+      background-color: var(--c-primary);
+      color: white;
+   }
+
+   &:disabled {
+      background-color: var(--c-light);
+      color: #888888;
+      cursor: not-allowed;
+   }
+}

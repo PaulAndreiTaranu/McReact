@@ -1,3 +1,10 @@
-.Content {
-   margin-top: 72px;
+@import "sass/main.scss";
+
+.main {
+   margin-top: 10vh;
+   background-color: var(--c-light);
+   overflow: hidden;
+
+   @include media(">md") {
+   }
 }

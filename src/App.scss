@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+@import "sass/main.scss";
+
+// BASE
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+*:focus:not(:focus-visible) {
+   outline: none;
+}
+
+html {
+   font-size: 62.5%; // 1rem = 10px
+   line-height: 150%;
+   -webkit-text-size-adjust: 100%;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   // NO SCROLLBAR
+   scrollbar-width: none;
+   scroll-behavior: smooth;
+   -ms-overflow-style: none;
+}
+
+body {
+   position: relative;
+   font-family: var(--ff-primary);
+   font-size: 1.5rem;
+   // NO SCROLLBAR
+   &::-webkit-scrollbar {
+      display: none;
+   }
+}

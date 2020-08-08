@@ -1,0 +1,11 @@
+@import "sass/main.scss";
+
+.CheckoutSummary {
+   text-align: center;
+   width: 80%;
+   margin: auto;
+
+   @include media(">sm") {
+      width: 40vw;
+   }
+}

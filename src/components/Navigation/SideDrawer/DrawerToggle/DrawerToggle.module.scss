@@ -1,3 +1,5 @@
+@import "sass/main.scss";
+
 .DrawerToggle {
    width: 40px;
    height: 100%;
@@ -14,10 +16,8 @@
       height: 3px;
       background-color: white;
    }
-}
 
-@media (min-width: 500px) {
-   .DrawerToggle {
+   @include media(">sm") {
       display: none;
    }
 }

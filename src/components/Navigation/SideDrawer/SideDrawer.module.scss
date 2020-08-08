@@ -1,3 +1,5 @@
+@import "sass/main.scss";
+
 .SideDrawer {
    position: fixed;
    width: 280px;
@@ -7,13 +9,10 @@
    top: 0;
    z-index: 200;
    background-color: white;
-   padding: 32px 16px;
    box-sizing: border-box;
    transition: transform 0.3s ease-out;
-}
 
-@media (min-width: 500px) {
-   .SideDrawer {
+   @include media(">sm") {
       display: none;
    }
 }
