@@ -570,3 +570,46 @@ $im-no-media-expressions: ("screen", "portrait", "landscape") !default;
       }
    }
 }
+
+/// FLUID TYPOGRAPHY
+
+@function strip-unit($value) {
+   @return $value / ($value * 0 + 1);
+}
+
+/// @param {10px} -> 10px = 1rem if html font-size: 62.5%
+///
+@function rem-to-px($value) {
+   @return strip-unit($value) * 10px;
+}
+
+@mixin font-size-fluid($min-font-size, $max-font-size) {
+   $min-vw: map-get(
+      $map: $breakpoints,
+      $key: "sm",
+   );
+   $max-vw: map-get(
+      $map: $breakpoints,
+      $key: "xl",
+   );
+   // $min-font-size: @include rem-to-px($min-font-size);
+   $u1: unit($min-vw);
+   $u2: unit($max-vw);
+   $u3: unit($min-font-size);
+   $u4: unit($max-font-size);
+
+   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+      & {
+         font-size: $min-font-size;
+         @include media(">sm") {
+            font-size: calc(
+               #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+                  ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+            );
+         }
+         @include media(">xl") {
+            font-size: $max-font-size;
+         }
+      }
+   }
+}

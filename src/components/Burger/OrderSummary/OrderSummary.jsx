@@ -3,8 +3,7 @@ import Aux from "../../../hoc/Auxiliary";
 import Button from "../../UI/Button/Button";
 
 class OrderSummary extends Component {
-   componentWillUpdate() {
-   }
+   componentWillUpdate() {}
 
    render() {
       const ingredientSummary = Object.keys(this.props.ingredients).map((ingKey) => {
@@ -24,12 +23,14 @@ class OrderSummary extends Component {
                <strong>Total Price: ${this.props.price.toFixed(2)}</strong>
             </p>
             <p>Continue to Checkout?</p>
-            <Button btnType="Danger" clicked={this.props.purchaseCancelled}>
-               CANCEL
-            </Button>
-            <Button btnType="Success" clicked={this.props.purchaseContinued}>
-               CONTINUE
-            </Button>
+            <div>
+               <Button btnType="Danger" clicked={this.props.purchaseCancelled}>
+                  CANCEL
+               </Button>
+               <Button btnType="Success" clicked={this.props.purchaseContinued}>
+                  CONTINUE
+               </Button>
+            </div>
          </Aux>
       );
    }

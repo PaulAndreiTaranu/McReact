@@ -8,8 +8,9 @@
 }
 
 .BuildControls {
-   font: 400 1.2rem var(--ff-primary);
-   width: 50%;
+   font: 400 1.5rem var(--ff-primary);
+   @include font-size-fluid(rem-to-px(1.5rem), rem-to-px(2rem));
+   width: 70%;
    height: 90%;
    background-color: white;
    border-radius: 1rem;
@@ -26,15 +27,16 @@
    }
 
    @include media(">sm") {
-      font-size: 1.5rem;
+      width: 60%;
    }
    @include media(">md") {
-      font-size: 2rem;
+      width: 50%;
    }
 }
 
 .currentPrice {
    border-radius: 1rem 1rem 0 0;
+   font: inherit;
    display: flex;
    align-items: center;
    justify-content: center;

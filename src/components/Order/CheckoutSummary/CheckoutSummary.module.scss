@@ -1,11 +1,22 @@
 @import "sass/main.scss";
 
 .CheckoutSummary {
+   margin-top: 10vh;
    text-align: center;
-   width: 80%;
-   margin: auto;
+   width: 100vw;
 
-   @include media(">sm") {
-      width: 40vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+
+   & h1 {
+      height: 10vh;
+   }
+
+   > * {
+      height: 100%;
+      width: 100%;
+      margin: 2vh 0;
    }
 }
